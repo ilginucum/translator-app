@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Translator App</h1>
+        <form id="translate-form">
+            <textarea id="input-text" placeholder="Enter text to translate" required></textarea>
+            <div class="language-controls">
+                <select id="source-lang">
+                    <option value="">Detect Language</option>
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="tr">Turkish</option>
+                    <option value="it">Italian</option>
+                    <option value="de">German</option>
+                </select>
+                <button type="submit" id="translate-btn">Translate</button>
+                <select id="target-lang" required>
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="tr">Turkish</option>
+                    <option value="it">Italian</option>
+                    <option value="de">German</option>
+                </select>
+            </div>
+        </form>
+        <div id="loading" class="loading" style="display: none;">Translating...</div>
+        <textarea id="result" readonly placeholder="Translation will appear here"></textarea>
+        <div id="detected-language"></div>
+        
+        <!-- New section for flags and stickman -->
+        <div id="animation-container">
+            <div id="flags-container">
+                <img src="{{ url_for('static', filename='flags/en.png') }}" alt="English" class="flag" data-lang="en">
+                <img src="{{ url_for('static', filename='flags/es.png') }}" alt="Spanish" class="flag" data-lang="es">
+                <img src="{{ url_for('static', filename='flags/fr.png') }}" alt="French" class="flag" data-lang="fr">
+                <img src="{{ url_for('static', filename='flags/tr.png') }}" alt="Turkish" class="flag" data-lang="tr">
+                <img src="{{ url_for('static', filename='flags/it.png') }}" alt="Italian" class="flag" data-lang="it">
+                <img src="{{ url_for('static', filename='flags/de.png') }}" alt="German" class="flag" data-lang="de">
+            </div>
+            <div id="stickman">
+                <div class="head"></div>
+                    <div class="body"></div>
+                    <div class="arm left"></div>
+                    <div class="arm right"></div>
+                    <div class="leg left"></div>
+                    <div class="leg right"></div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.language-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+select, button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+.loading {
+    text-align: center;
+    margin: 10px 0;
+    font-style: italic;
+    color: #666;
+}
+
+#detected-language {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+#animation-container {
+    position: relative;
+    height: 150px;
+    margin-top: 20px;
+}
+
+#flags-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.flag {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+}
+
+#stickman {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 40px;
+    transition: left 2s linear;
+}
+
+#stickman .head {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 5px;
+}
+
+#stickman .body {
+    width: 2px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    left: 9px;
+}
+
+#stickman .arm {
+    width: 2px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    top: 12px;
+}
+
+#stickman .arm.left {
+    left: 7px;
+    transform-origin: top;
+    animation: swingLeft 0.5s infinite alternate;
+}
+
+#stickman .arm.right {
+    right: 7px;
+    transform-origin: top;
+    animation: swingRight 0.5s infinite alternate;
+}
+
+#stickman .leg {
+    width: 2px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+#stickman .leg.left {
+    left: 7px;
+    transform-origin: top;
+    animation: stepLeft 0.5s infinite alternate;
+}
+
+#stickman .leg.right {
+    right: 7px;
+    transform-origin: top;
+    animation: stepRight 0.5s infinite alternate;
+}
+
+@keyframes swingLeft {
+    from { transform: rotate(30deg); }
+    to { transform: rotate(-30deg); }
+}
+
+@keyframes swingRight {
+    from { transform: rotate(-30deg); }
+    to { transform: rotate(30deg); }
+}
+
+@keyframes stepLeft {
+    from { transform: rotate(-30deg); }
+    to { transform: rotate(30deg); }
+}
+
+@keyframes stepRight {
+    from { transform: rotate(30deg); }
+    to { transform: rotate(-30deg); }
+}
